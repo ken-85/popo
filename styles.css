@@ -1,0 +1,139 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    flex-direction: column;
+    background-image: url('images/hearts.png');
+    background-color: #f8d7da; /* Fallback color */
+    background-size: auto; /* Maintains the original size of the pattern */
+    background-repeat: repeat; /* Repeats the pattern */
+    background-attachment: fixed; /* Keeps the background fixed during scroll */
+  }
+  
+  .container {
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 2.5em;
+    color: #ff69b4;
+    opacity: 0; /* Start hidden for animation */
+    animation: fadeIn 1s ease-out forwards;
+    animation-delay: 0.5s;
+    background-color: rgba(255, 255, 255, 0.8); /* White background with transparency */
+    padding: 10px;
+    border-radius: 10px; /* Optional: rounded corners */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Shadow for better contrast */
+  }
+  
+  .buttons {
+    margin-top: 20px;
+    opacity: 0; /* Start hidden */
+    animation: popIn 0.5s ease-out forwards;
+    animation-delay: 1.5s; /* Delay to start after text animation */
+  }
+  
+  .gif_container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+  
+  .cute-gif {
+    width: 300px; /* Adjust width as needed */
+    height: auto; /* Maintains aspect ratio */
+    border-radius: 10px; /* Optional: adds rounded corners */
+  }
+  
+  .yes-button {
+    background-color: #4CAF50; /* Green for positive */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .yes-button:hover {
+    background-color: #66BB6A; /* Lighter green on hover */
+    transform: scale(1.05);
+  }
+  
+  .yes-button:active {
+    background-color: #388E3C; /* Darker green when clicked */
+    transform: scale(0.95);
+  }
+  
+  .no-button {
+    background-color: #F44336; /* Red for negative */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .no-button:hover {
+    background-color: #EF5350; /* Lighter red on hover */
+    transform: scale(1.05);
+  }
+  
+  .no-button:active {
+    background-color: #C62828; /* Darker red when clicked */
+    transform: scale(0.95);
+  }
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes popIn {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 10px; /* Add padding for better spacing */
+    }
+
+    h1 {
+        font-size: 2em; /* Reduce font size for mobile */
+        padding: 8px; /* Adjust padding for smaller screens */
+    }
+
+    .buttons {
+        margin-top: 15px; /* Adjust margin for better spacing */
+    }
+
+    .yes-button, .no-button {
+        padding: 8px 16px; /* Adjust button padding */
+        font-size: 14px; /* Reduce font size for buttons */
+    }
+
+    .gif_container img, .cute-gif {
+        width: 100%; /* Ensure images fit within the screen */
+        height: auto; /* Maintain aspect ratio */
+    }
+}

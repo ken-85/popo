@@ -1,0 +1,57 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url('images/hearts.png');
+    background-color: #f8d7da; /* Fallback color */
+    background-size: auto; /* Maintains the original size of the pattern */
+    background-repeat: repeat; /* Repeats the pattern */
+    background-attachment: fixed;
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    text-align: center;
+}
+
+.header_text {
+    font-size: 3em;
+    color: #d32f2f;
+    animation: popUp 1s ease-out;
+}
+
+.gif_container img {
+    width: 100%; 
+    max-width: 500px; 
+    height: auto; 
+}
+
+@keyframes popUp {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 600px) {
+    .header_text {
+        font-size: 2em; /* Smaller font size for mobile */
+    }
+
+    .gif_container img {
+        max-width: 100%; /* Ensure the image fits within the screen */
+    }
+
+    .container {
+        padding: 10px; /* Add some padding for better spacing */
+    }
+}
